@@ -1,14 +1,148 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Sew & Show</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sew & Show | Modayı Baştan Yarat</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f7eee9; color: #211b1b; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    header { background: rgba(247,238,233,.95); border-bottom: 1px solid #e4d0c8; position: sticky; top: 0; z-index: 10; }
+    .container { max-width: 1180px; margin: auto; padding: 0 24px; }
+    .nav { height: 76px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 22px; }
+    .logo-icon { background: #a32035; color: white; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; }
+    .menu { display: flex; gap: 28px; font-weight: 600; font-size: 14px; }
+    .btn { display: inline-block; background: #a32035; color: white; padding: 14px 24px; border-radius: 999px; font-weight: 700; }
+    .btn.light { background: white; color: #a32035; border: 1px solid #a32035; }
+    .hero { padding: 90px 0; display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: center; }
+    .tag { color: #a32035; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px; }
+    h1 { font-size: clamp(44px, 7vw, 78px); line-height: .95; margin-bottom: 24px; }
+    .hero p { font-size: 19px; color: #5e4b4b; max-width: 620px; margin-bottom: 30px; }
+    .hero-card { background: #e7d3ca; border-radius: 36px; padding: 24px; box-shadow: 0 20px 45px rgba(0,0,0,.15); }
+    .mockup { min-height: 480px; border-radius: 28px; background: linear-gradient(135deg, #fff8f4, #d8b7ad); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px; }
+    .mockup h2 { font-size: 44px; margin-bottom: 16px; }
+    .section { padding: 80px 0; }
+    .white { background: rgba(255,255,255,.55); }
+    .section-title { text-align: center; max-width: 760px; margin: 0 auto 45px; }
+    .section-title h2 { font-size: 44px; margin-bottom: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+    .card { background: white; border-radius: 28px; padding: 30px; box-shadow: 0 12px 25px rgba(0,0,0,.08); }
+    .card.beige { background: #f7eee9; }
+    .icon { font-size: 36px; margin-bottom: 18px; }
+    .card h3 { font-size: 24px; margin-bottom: 12px; }
+    .card p { color: #5e4b4b; }
+    .dark { background: #211b1b; color: white; }
+    .dark .card { color: #211b1b; }
+    .price { font-size: 30px; font-weight: 900; margin-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .challenge { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .tile { aspect-ratio: 1/1; background: white; border-radius: 28px; display: grid; place-items: center; font-size: 28px; font-weight: 900; box-shadow: 0 12px 25px rgba(0,0,0,.08); }
+    footer { background: #a32035; color: white; padding: 45px 0; }
+    footer .container { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    @media (max-width: 850px) {
+      .menu { display: none; }
+      .hero, .challenge { grid-template-columns: 1fr; }
+      .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      footer .container { flex-direction: column; text-align: center; }
+      .mockup { min-height: 340px; }
+    }
+  </style>
 </head>
-<body style="font-family:Arial; background:#f7eee9; text-align:center; padding:60px;">
-  <h1>Sew & Show</h1>
-  <p>Eski kıyafetini yeni bir stile dönüştür.</p>
-  <button style="background:#a32035; color:white; padding:15px 25px; border:0; border-radius:20px;">
-    Dönüşüm Kitlerini İncele
-  </button>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo"><div class="logo-icon">✂</div> Sew & Show</div>
+      <nav class="menu">
+        <a href="#fikir">Fikir</a>
+        <a href="#kitler">Kitler</a>
+        <a href="#challenge">Challenge</a>
+        <a href="#hedef">Hedef Kitle</a>
+      </nav>
+      <a class="btn" href="#kitler">Kiti Keşfet</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div>
+        <div class="tag">DIY Moda Platformu</div>
+        <h1>Eski kıyafetini yeni bir stile dönüştür.</h1>
+        <p>Sew & Show, kullanıcıların kullanmadıkları parçaları yaratıcı tasarım kitleri ve dijital rehberlik ile yeniden yorumlamasını sağlayan bir e-ticaret ve sosyal paylaşım deneyimidir.</p>
+        <a class="btn" href="#kitler">Dönüşüm Kitlerini İncele</a>
+        <a class="btn light" href="#nasil">Nasıl Çalışır?</a>
+      </div>
+      <div class="hero-card">
+        <div class="mockup">
+          <div class="icon">✨</div>
+          <h2>Before / After</h2>
+          <p>Kullanılmayan bir parça, birkaç adımda kişisel tasarıma dönüşür.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="fikir" class="section white">
+      <div class="container grid-3">
+        <div class="card beige"><div class="icon">✨</div><h3>Kişiselleştirme</h3><p>Kullanıcı kendi stilini yaratır; mağazada bulamayacağı parçayı kendisi üretir.</p></div>
+        <div class="card beige"><div class="icon">💸</div><h3>Ekonomik Çözüm</h3><p>Yeni kıyafet almak yerine daha uygun maliyetli bir dönüşüm deneyimi sunar.</p></div>
+        <div class="card beige"><div class="icon">♻️</div><h3>Sürdürülebilirlik</h3><p>Fast fashion tüketimine alternatif olarak var olan ürünü yeniden değerlendirir.</p></div>
+      </div>
+    </section>
+
+    <section id="nasil" class="section">
+      <div class="container">
+        <div class="section-title"><h2>Nasıl Çalışır?</h2><p>Basit, yönlendirmeli ve paylaşılabilir bir dönüşüm süreci.</p></div>
+        <div class="grid-4">
+          <div class="card"><h3>1</h3><p>Kullanmadığın parçayı seç.</p></div>
+          <div class="card"><h3>2</h3><p>Tarzına uygun dönüşüm kitini al.</p></div>
+          <div class="card"><h3>3</h3><p>Dijital rehberi takip et.</p></div>
+          <div class="card"><h3>4</h3><p>Öncesi/sonrası sonucunu paylaş.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kitler" class="section dark">
+      <div class="container">
+        <div class="section-title"><h2>Dönüşüm Kitleri</h2><p>Her kit, fiziksel malzemeler ve uygulama içi dijital rehberlik ile gelir.</p></div>
+        <div class="grid-3">
+          <div class="card"><h3>Başlangıç Dönüşüm Kiti</h3><p>Eski tişört, gömlek veya çantaları kolayca yenilemek isteyenler için temel set.</p><div class="price">€14,90 <a class="btn" href="#">Sepete Ekle</a></div></div>
+          <div class="card"><h3>Street Style Kiti</h3><p>Patch, kumaş detayları ve rehber içerikle parçanı daha dikkat çekici hale getir.</p><div class="price">€24,90 <a class="btn" href="#">Sepete Ekle</a></div></div>
+          <div class="card"><h3>Premium Tasarım Kiti</h3><p>Daha özgün tasarımlar, özel aksesuarlar ve adım adım dijital rehberlik.</p><div class="price">€34,90 <a class="btn" href="#">Sepete Ekle</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="challenge" class="section container challenge">
+      <div>
+        <div class="tag">Sosyal Medya Challenge</div>
+        <h2 style="font-size:44px;margin-bottom:20px;">#SewAndShow ile tasarımını göster.</h2>
+        <p style="color:#5e4b4b;font-size:18px;margin-bottom:25px;">Kullanıcılar öncesi/sonrası videolarını paylaşır. Her ay en çok beğeni alan tasarım sınırlı koleksiyona dönüştürülür ve tasarım sahibine gelir payı verilir.</p>
+        <a class="btn" href="#">Challenge’a Katıl</a>
+      </div>
+      <div class="tiles">
+        <div class="tile">Öncesi</div>
+        <div class="tile">Kes & Dik</div>
+        <div class="tile">Yeni Stil</div>
+        <div class="tile">Paylaş</div>
+      </div>
+    </section>
+
+    <section id="hedef" class="section white">
+      <div class="container grid-3">
+        <div class="card beige"><h3>Bilinçli Tüketiciler</h3><p>Fast fashion etkisinin farkında olan ve daha etik tüketmek isteyen kullanıcılar.</p></div>
+        <div class="card beige"><h3>Trend Takipçileri</h3><p>Herkesle aynı giyinmekten sıkılan, sıradışı parçalar arayan gençler.</p></div>
+        <div class="card beige"><h3>DIY Kitlesi</h3><p>El işi yapmayı seven, boş zamanında üretmekten keyif alan kişiler.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div><h2>Sew & Show</h2><p>Yenilik seninle başlar.</p></div>
+      <a class="btn light" href="#kitler">Hemen Başla</a>
+    </div>
+  </footer>
 </body>
 </html>
